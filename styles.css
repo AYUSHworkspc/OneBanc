@@ -1,0 +1,733 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  body {
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  .app-container {
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .screen-container {
+    width: 100%;
+    height: 812px;
+    background-color: white;
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  /* Status Bar */
+  .status-bar {
+    height: 44px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background-color: #ffffff;
+  }
+  
+  /* Common Components */
+  .bottom-nav {
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid #eee;
+    background-color: white;
+    margin-top: auto;
+  }
+  
+  .nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .nav-icon {
+    font-size: 24px;
+    height: 24px;
+    color: #999;
+    margin-bottom: 5px;
+  }
+  
+  .nav-label {
+    font-size: 12px;
+    color: #999;
+  }
+  
+  .nav-item.active .nav-icon,
+  .nav-item.active .nav-label {
+    color: #5046e5;
+    font-weight: 500;
+  }
+  
+  .notification-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .notification-badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 10px;
+    height: 10px;
+    background-color: #ff4d4f;
+    border-radius: 50%;
+  }
+  
+  /* HOME SCREEN */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .profile-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #5046e5;
+  }
+  
+  .welcome-text {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .greeting {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .balance-card {
+    margin: 0 20px;
+    background: linear-gradient(135deg, #5046e5 0%, #3475ed 100%);
+    border-radius: 20px;
+    padding: 20px;
+    color: white;
+  }
+  
+  .balance-label {
+    font-size: 14px;
+    opacity: 0.8;
+  }
+  
+  .balance-amount {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 5px 0 15px;
+  }
+  
+  .account-number {
+    font-size: 14px;
+    opacity: 0.8;
+  }
+  
+  .card-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+  }
+  
+  .card-action-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 12px;
+    width: 48%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .card-action-btn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  
+  .card-action-btn .action-icon {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  .quick-actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .action-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70px;
+    cursor: pointer;
+  }
+  
+  .action-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 16px;
+    background-color: #f0f2ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #5046e5;
+    margin-bottom: 8px;
+    font-size: 24px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+  }
+  
+  .action-item:hover .action-icon {
+    transform: scale(1.05);
+    background-color: #e4e8ff;
+  }
+  
+  .action-label {
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+  }
+  
+  .recent-transactions {
+    flex: 1;
+    padding: 0 20px;
+    overflow-y: auto;
+  }
+  
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .section-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .view-all {
+    font-size: 14px;
+    color: #5046e5;
+    cursor: pointer;
+  }
+  
+  .transaction-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 12px;
+    background-color: #f9f9f9;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+  }
+  
+  .transaction-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  }
+  
+  .transaction-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    background-color: #e6e9ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    color: #5046e5;
+  }
+  
+  .transaction-details {
+    flex: 1;
+  }
+  
+  .transaction-name {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  .transaction-date {
+    font-size: 12px;
+    color: #888;
+    margin-top: 4px;
+  }
+  
+  .transaction-amount {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .credit {
+    color: #52c41a;
+  }
+  
+  .debit {
+    color: #ff4d4f;
+  }
+  
+  /* REWARDS SCREEN */
+  .rewards-screen {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: #F8F8FC;
+  }
+  
+  .rewards-header {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+  }
+  
+  .rewards-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .rewards-points {
+    background: linear-gradient(135deg, #FF9B21 0%, #FF6B21 100%);
+    border-radius: 16px;
+    margin: 10px 20px;
+    padding: 20px;
+    color: white;
+  }
+  
+  .points-label {
+    font-size: 14px;
+    opacity: 0.9;
+  }
+  
+  .points-value {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 5px 0;
+  }
+  
+  .points-expiry {
+    font-size: 13px;
+    opacity: 0.8;
+  }
+  
+  .rewards-tabs {
+    display: flex;
+    background-color: white;
+    padding: 0 20px;
+    margin-top: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+  
+  .rewards-tab {
+    padding: 15px 0;
+    margin-right: 25px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #999;
+    position: relative;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .rewards-tab:hover {
+    color: #5046e5;
+  }
+  
+  .rewards-tab.active {
+    color: #5046e5;
+  }
+  
+  .rewards-tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #5046e5;
+    border-radius: 3px;
+  }
+  
+  .rewards-list {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+  }
+  
+  .reward-card {
+    background-color: white;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .reward-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  }
+  
+  .reward-image {
+    height: 120px;
+    background-color: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 16px;
+  }
+  
+  .reward-content {
+    padding: 15px;
+  }
+  
+  .reward-merchant {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+  }
+  
+  .reward-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .reward-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .reward-points {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: #FF6B21;
+  }
+  
+  .redeem-btn {
+    padding: 8px 15px;
+    background-color: #5046e5;
+    color: white;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .redeem-btn:hover {
+    background-color: #4039c0;
+  }
+  
+  /* SETTINGS SCREEN */
+  .settings-screen {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: #F8F8FC;
+  }
+  
+  .settings-header {
+    padding: 20px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+  }
+  
+  .back-button {
+    margin-right: 15px;
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .settings-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .user-profile {
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .profile-photo {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    background-color: #e6e9ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #5046e5;
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 15px;
+  }
+  
+  .profile-info {
+    flex: 1;
+  }
+  
+  .profile-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .profile-id {
+    font-size: 14px;
+    color: #666;
+    margin-top: 2px;
+  }
+  
+  .profile-edit {
+    font-size: 14px;
+    color: #5046e5;
+    cursor: pointer;
+  }
+  
+  .settings-section {
+    margin-top: 20px;
+    background-color: white;
+    padding: 5px 0;
+  }
+  
+  .section-label {
+    padding: 15px 20px 10px;
+    font-size: 14px;
+    color: #666;
+    font-weight: 500;
+  }
+  
+  .settings-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .settings-item:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .settings-item:last-child {
+    border-bottom: none;
+  }
+  
+  .item-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #f0f2ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    color: #5046e5;
+  }
+  
+  .item-text {
+    flex: 1;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .item-action {
+    color: #999;
+  }
+  
+  .toggle-switch {
+    width: 44px;
+    height: 24px;
+    background-color: #5046e5;
+    border-radius: 12px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .toggle-switch::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+  }
+  
+  .toggle-switch.off {
+    background-color: #d9d9d9;
+  }
+  
+  .toggle-switch.off::after {
+    transform: translateX(-20px);
+  }
+  
+  .logout-button {
+    margin: 20px;
+    background-color: #fff0f0;
+    color: #ff4d4f;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .logout-button:hover {
+    background-color: #ffe0e0;
+  }
+  
+  /* Animation */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .screen-container {
+    animation: fadeIn 0.3s ease;
+  }
+  
+  /* Dark Mode */
+  body.dark-mode {
+    background-color: #121212;
+  }
+  
+  body.dark-mode .screen-container {
+    background-color: #1a1a1a;
+  }
+  
+  body.dark-mode .status-bar,
+  body.dark-mode .header,
+  body.dark-mode .rewards-header,
+  body.dark-mode .settings-header,
+  body.dark-mode .user-profile,
+  body.dark-mode .bottom-nav,
+  body.dark-mode .settings-section {
+    background-color: #1a1a1a;
+  }
+  
+  body.dark-mode .name,
+  body.dark-mode .section-title,
+  body.dark-mode .rewards-title,
+  body.dark-mode .settings-title,
+  body.dark-mode .profile-name,
+  body.dark-mode .item-text,
+  body.dark-mode .transaction-name {
+    color: #e0e0e0;
+  }
+  
+  body.dark-mode .greeting,
+  body.dark-mode .profile-id,
+  body.dark-mode .transaction-date,
+  body.dark-mode .action-label,
+  body.dark-mode .section-label {
+    color: #999;
+  }
+  
+  body.dark-mode .transaction-item,
+  body.dark-mode .reward-card {
+    background-color: #2a2a2a;
+  }
+  
+  body.dark-mode .rewards-tabs {
+    background-color: #1a1a1a;
+    box-shadow: 0 2px 4px rgba(168, 97, 97, 0.2);
+  }
+  
+  body.dark-mode .action-icon,
+  body.dark-mode .transaction-icon,
+  body.dark-mode .item-icon {
+    background-color: #2a2a2a;
+  }
+  
+  body.dark-mode .notification-icon {
+    background-color: #2a2a2a;
+  }
+  
+  @media (max-width: 480px) {
+    .screen-container {
+      border-radius: 0;
+      width: 100%;
+      height: 100vh;
+    }
+    
+    body {
+      padding: 0;
+    }
+  }

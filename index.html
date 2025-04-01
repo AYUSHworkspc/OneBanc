@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OneBanc Redesign</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- HOME SCREEN -->
+    <div class="screen-container" id="home-screen">
+      <div class="status-bar">
+        <span class="time">9:41</span>
+        <span class="status-icons">📶 📊 100%</span>
+      </div>
+      
+      <div class="header">
+        <div class="profile-section">
+          <div class="profile-pic">JS</div>
+          <div class="welcome-text">
+            <span class="greeting">Good morning,</span>
+            <span class="name">John Smith</span>
+          </div>
+        </div>
+        <div class="notification-icon">
+          🔔
+          <div class="notification-badge"></div>
+        </div>
+      </div>
+      
+      <div class="balance-card">
+        <div class="balance-label">Total Balance</div>
+        <div class="balance-amount">₹42,650.75</div>
+        <div class="account-number">•••• 5678</div>
+        <div class="card-actions">
+          <div class="card-action-btn" id="send-money">
+            <span class="action-icon">↑</span>
+            <span>Send</span>
+          </div>
+          <div class="card-action-btn" id="receive-money">
+            <span class="action-icon">↓</span>
+            <span>Receive</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="quick-actions">
+        <div class="action-item" id="mobile-recharge">
+          <div class="action-icon">📱</div>
+          <div class="action-label">Mobile Recharge</div>
+        </div>
+        <div class="action-item" id="electricity-bill">
+          <div class="action-icon">⚡</div>
+          <div class="action-label">Electricity</div>
+        </div>
+        <div class="action-item" id="movie-tickets">
+          <div class="action-icon">🎫</div>
+          <div class="action-label">Movie Tickets</div>
+        </div>
+        <div class="action-item" id="more-actions">
+          <div class="action-icon">...</div>
+          <div class="action-label">More</div>
+        </div>
+      </div>
+      
+      <div class="recent-transactions">
+        <div class="section-header">
+          <div class="section-title">Recent Transactions</div>
+          <div class="view-all" id="view-all-transactions">View All</div>
+        </div>
+        
+        <div class="transactions-list" id="transactions-list">
+          <!-- Transaction items will be loaded dynamically -->
+        </div>
+      </div>
+      
+      <div class="bottom-nav">
+        <div class="nav-item active" data-screen="home">
+          <div class="nav-icon">🏠</div>
+          <div class="nav-label">Home</div>
+        </div>
+        <div class="nav-item" data-screen="analytics">
+          <div class="nav-icon">📊</div>
+          <div class="nav-label">Analytics</div>
+        </div>
+        <div class="nav-item" data-screen="rewards">
+          <div class="nav-icon">🎁</div>
+          <div class="nav-label">Rewards</div>
+        </div>
+        <div class="nav-item" data-screen="settings">
+          <div class="nav-icon">⚙️</div>
+          <div class="nav-label">Settings</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- REWARDS SCREEN -->
+    <div class="screen-container hidden" id="rewards-screen">
+      <div class="status-bar">
+        <span class="time">9:41</span>
+        <span class="status-icons">📶 📊 100%</span>
+      </div>
+      
+      <div class="rewards-header">
+        <div class="rewards-title">Rewards & Offers</div>
+        <div class="notification-icon">🔔</div>
+      </div>
+      
+      <div class="rewards-points">
+        <div class="points-label">Available Reward Points</div>
+        <div class="points-value">3,250</div>
+        <div class="points-expiry">250 points expiring on 30 April 2025</div>
+      </div>
+      
+      <div class="rewards-tabs">
+        <div class="rewards-tab active" data-tab="all">All Offers</div>
+        <div class="rewards-tab" data-tab="exclusive">Exclusive</div>
+        <div class="rewards-tab" data-tab="cashback">Cashback</div>
+      </div>
+      
+      <div class="rewards-list" id="rewards-list">
+        <!-- Reward cards will be loaded dynamically -->
+      </div>
+      
+      <div class="bottom-nav">
+        <div class="nav-item" data-screen="home">
+          <div class="nav-icon">🏠</div>
+          <div class="nav-label">Home</div>
+        </div>
+        <div class="nav-item" data-screen="analytics">
+          <div class="nav-icon">📊</div>
+          <div class="nav-label">Analytics</div>
+        </div>
+        <div class="nav-item active" data-screen="rewards">
+          <div class="nav-icon">🎁</div>
+          <div class="nav-label">Rewards</div>
+        </div>
+        <div class="nav-item" data-screen="settings">
+          <div class="nav-icon">⚙️</div>
+          <div class="nav-label">Settings</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- SETTINGS SCREEN -->
+    <div class="screen-container hidden" id="settings-screen">
+      <div class="status-bar">
+        <span class="time">9:41</span>
+        <span class="status-icons">📶 📊 100%</span>
+      </div>
+      
+      <div class="settings-header">
+        <div class="back-button" id="back-to-home">←</div>
+        <div class="settings-title">Settings</div>
+      </div>
+      
+      <div class="user-profile">
+        <div class="profile-photo">JS</div>
+        <div class="profile-info">
+          <div class="profile-name">John Smith</div>
+          <div class="profile-id">Customer ID: ON789456123</div>
+        </div>
+        <div class="profile-edit" id="edit-profile">Edit</div>
+      </div>
+      
+      <div class="settings-section">
+        <div class="section-label">ACCOUNT</div>
+        <div class="settings-item" id="personal-info">
+          <div class="item-icon">👤</div>
+          <div class="item-text">Personal Information</div>
+          <div class="item-action">→</div>
+        </div>
+        <div class="settings-item" id="security-privacy">
+          <div class="item-icon">🔒</div>
+          <div class="item-text">Security & Privacy</div>
+          <div class="item-action">→</div>
+        </div>
+        <div class="settings-item" id="payment-methods">
+          <div class="item-icon">💳</div>
+          <div class="item-text">Payment Methods</div>
+          <div class="item-action">→</div>
+        </div>
+      </div>
+      
+      <div class="settings-section">
+        <div class="section-label">PREFERENCES</div>
+        <div class="settings-item">
+          <div class="item-icon">🔔</div>
+          <div class="item-text">Notifications</div>
+          <div class="toggle-switch" id="notifications-toggle"></div>
+        </div>
+        <div class="settings-item">
+          <div class="item-icon">🌙</div>
+          <div class="item-text">Dark Mode</div>
+          <div class="toggle-switch" id="dark-mode-toggle"></div>
+        </div>
+        <div class="settings-item" id="upi-settings">
+          <div class="item-icon">🔢</div>
+          <div class="item-text">UPI Settings</div>
+          <div class="item-action">→</div>
+        </div>
+      </div>
+      
+      <div class="settings-section">
+        <div class="section-label">HELP</div>
+        <div class="settings-item" id="contact-support">
+          <div class="item-icon">📞</div>
+          <div class="item-text">Contact Support</div>
+          <div class="item-action">→</div>
+        </div>
+        <div class="settings-item" id="terms">
+          <div class="item-icon">📄</div>
+          <div class="item-text">Terms & Conditions</div>
+          <div class="item-action">→</div>
+        </div>
+        <div class="settings-item" id="faqs">
+          <div class="item-icon">❓</div>
+          <div class="item-text">FAQs</div>
+          <div class="item-action">→</div>
+        </div>
+      </div>
+      
+      <div class="logout-button" id="logout">Log Out</div>
+      
+      <div class="bottom-nav">
+        <div class="nav-item" data-screen="home">
+          <div class="nav-icon">🏠</div>
+          <div class="nav-label">Home</div>
+        </div>
+        <div class="nav-item" data-screen="analytics">
+          <div class="nav-icon">📊</div>
+          <div class="nav-label">Analytics</div>
+        </div>
+        <div class="nav-item" data-screen="rewards">
+          <div class="nav-icon">🎁</div>
+          <div class="nav-label">Rewards</div>
+        </div>
+        <div class="nav-item active" data-screen="settings">
+          <div class="nav-icon">⚙️</div>
+          <div class="nav-label">Settings</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   <script src="script.js"></script> 
+</body>
+</html>
